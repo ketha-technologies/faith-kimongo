@@ -1,0 +1,23 @@
+<div class="container-datalist">
+  <h2>Farmers Data List</h2>
+  <div class="search-container">
+    <input class="search-input" type="text" [(ngModel)]="searchTerm" placeholder="Search code...">
+    <button class="search-btn" (click)="onSearchClick()">Search</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Collection Code</th>
+        <th>Farmer Name</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredData">
+        <td>{{ item.collectionCode }}</td>
+        <td>{{ item.farmer }}</td>
+        <td>{{ item.collectionSize }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
